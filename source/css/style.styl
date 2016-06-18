@@ -1,0 +1,56 @@
+@import "nib"
+@import "_variables"
+@import "_util/mixin"
+@import "_util/grid"
+
+normalize-css()
+a{
+  text-decoration none
+  color: color-themes
+}
+html, body
+  height: 100%
+
+body
+  background: color-background
+  font-family Lantinghei SC,Arial,"\\5FAE\8F6F\96C5\9ED1",sans-serif
+  -webkit-text-size-adjust: 100%
+  font-size 14px
+  line-height:1.5
+  color:#666
+.left, .alignleft
+  float: left
+
+.right, .alignright
+  float: right
+.clear
+  clear: both
+.mobile-nav-on
+  overflow: hidden
+.clearfix
+  clearfix()
+
+
+img
+  max-width 100%
+  vertical-align top
+
+if sidebar and sidebar isnt bottom
+  #main
+    @media mq-normal
+      column(main-column)
+
+if sidebar is left
+  @media mq-normal
+    #main
+      float: right
+
+@import "_extend"
+@import "_partial/layout"
+@import "_partial/header"
+@import "_partial/footer"
+@import "_partial/sidebar"
+@import "_partial/highlight"
+@import "_partial/article"
+@import "_partial/mobile"
+

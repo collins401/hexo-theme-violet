@@ -1,0 +1,44 @@
+if sidebar is bottom
+  @import "sidebar-bottom"
+else
+  @import "sidebar-aside"
+#sidebar.layout-left
+  @media mq-tablet
+    padding-top 0
+#sidebar
+  padding-bottom 20px
+  @media mq-mobile
+    display none
+#footer
+  @media mq-mobile
+    padding 10px 0  
+.widget-wrap
+  font-size: 14px  
+.widget
+  @extend $base-style
+  line-height: line-height
+  word-wrap: break-word
+  font-size: 14px
+  ul
+    padding-left 20px
+    a
+      color #666
+    a:hover
+     text-decoration underline
+     color color-themes
+    
+
+.category-list-count
+.tag-list-count
+.archive-list-count
+  padding-left: 5px
+  color: color-grey
+  &:before
+    content: "("
+  &:after
+    content: ")"
+
+.tagcloud
+  a
+    margin-right: 5px
+    display: inline-block

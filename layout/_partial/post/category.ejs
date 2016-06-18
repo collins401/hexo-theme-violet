@@ -1,0 +1,12 @@
+<% if (post.categories && post.categories.length){ %>
+
+  <span class="article-category">
+  	分类：
+    <%- list_categories(post.categories, {
+      show_count: false,
+      class: 'article-category',
+      style: 'none',
+      separator: '文章分类'
+    }) %>
+  </span>
+<% } %>

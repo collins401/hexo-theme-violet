@@ -1,0 +1,189 @@
+// https://github.com/chriskempson/tomorrow-theme
+highlight-background = #3E3030
+highlight-current-line = #393939
+highlight-selection = #515151
+highlight-foreground = #CCCCBB
+highlight-comment = #5F5A5A
+highlight-red = #24980C
+highlight-orange = #f99157
+highlight-yellow = #ffcc66
+highlight-green = #b35e14
+highlight-aqua = #66cccc
+highlight-blue = #6699cc
+highlight-purple = #16A532
+
+$code-block
+  background: highlight-background
+  margin: 20px 0;
+  padding:10px 0
+  border-style: solid
+  font-size:12px
+  border-color: color-border
+  border-width: 1px 0
+  overflow: auto
+  color: highlight-foreground
+  box-shadow: 0 0 0 3px #BFBBBB
+  line-height: 1.428571429;
+  word-break: break-all;
+  word-wrap: break-word;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-family: 'Source Code Pro',Menlo,Consolas,Monaco,monospace
+
+$line-numbers
+  color: #666
+
+
+.article-entry
+  pre, code
+    font-family: 'Source Code Pro',Menlo,Consolas,Monaco,monospace
+  code
+    background: #F9F2F4
+    padding: 0.2em 0.3em
+    border-radius:2px
+    margin 0 2px
+    color #B94A48
+    font-size 12px
+  pre
+    code
+      background: none
+      text-shadow: none
+      padding: 0
+  .highlight
+    position relative
+    &.css:after,&.html:after,&.javascript:after,&.js:after
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #716969
+      text-align: right;
+      font-size: 12px
+      padding: 5px 10px 0;
+      line-height: 15px;
+      height: 15px;
+      font-weight: 400;
+    &.css:after
+      content: 'css'
+    &.html:after
+      content: 'html'
+    &.javascript:after
+      content: 'javascript'
+    &.js:after
+      content: 'js'
+    @extend $code-block
+    pre
+      border: none
+      margin: 0
+      padding: 0
+    table
+      margin: 0
+      width: auto
+    td
+      border: none
+      padding: 0
+      padding-left:10px
+    figcaption
+      clearfix()
+      font-size: 0.85em
+      color: highlight-comment
+ 
+      margin-bottom: 1em
+      a
+        float: right
+    .gutter pre
+      @extend $line-numbers
+      text-align: center
+      padding-right:10px
+      border-right:1px solid #5A5050
+      color:#6D6969
+   
+  .gist
+    margin: 0 article-padding * -1
+    border-style: solid
+    border-color: color-border
+    border-width: 1px 0
+    background: highlight-background
+    padding: 15px article-padding 15px 0
+    .gist-file
+      border: none
+      font-family: font-mono
+      margin: 0
+      .gist-data
+        background: none
+        border: none
+        .line-numbers
+          @extend $line-numbers
+          background: none
+          border: none
+          padding: 0 20px 0 0
+        .line-data
+          padding: 0 !important
+      .highlight
+        margin: 0
+        padding: 0
+        border: none
+      .gist-meta
+        background: highlight-background
+        color: highlight-comment
+        font: 0.85em font-sans
+        text-shadow: 0 0
+        padding: 0
+        margin-top: 1em
+        margin-left: article-padding
+        a
+          color: color-link
+          font-weight: normal
+          &:hover
+            text-decoration: underline
+
+pre
+  .comment
+    color: highlight-comment
+  .title
+    color: #E64A14
+    
+  .variable
+  .attribute
+  .tag
+  .regexp
+  .ruby .constant
+  .xml .tag .title
+  .xml .pi
+  .xml .doctype
+  .html .doctype
+  .css .id
+  .css .class
+  .css .pseudo
+    color: highlight-red
+  .number
+  .preprocessor
+  .built_in
+  .literal
+  .params
+  .constant
+    color: highlight-orange
+  .class
+  .ruby .class .title
+  .css .rules .attribute
+    color: highlight-green
+  .string
+  .value
+  .inheritance
+  .header
+  .ruby .symbol
+  .xml .cdata
+    color: highlight-green
+  .css .hexcolor
+    color: highlight-aqua
+  .function
+  .python .decorator
+  .python .title
+  .ruby .function .title
+  .ruby .title .keyword
+  .perl .sub
+  .javascript .title
+  .coffeescript .title
+    color: highlight-blue
+  .keyword
+  .javascript .function
+    color: highlight-purple

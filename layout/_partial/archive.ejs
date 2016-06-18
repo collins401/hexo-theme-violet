@@ -1,0 +1,60 @@
+<% if (pagination == 2){ %>
+  <% page.posts.each(function(post){ %>
+    <%- partial('article', {post: post, index: true}) %>
+  <% }) %>
+  <!-- 存档 -->
+
+<% } else if(pagination == 'archive'){ %>
+    <div class="article">  
+  <% var last; %>
+   <div class="archive-wrap">
+  <% page.posts.each(function(post, i){ %>
+    <% var year = post.date.year(); %>
+    <% if (last != year){ %>
+      <% if (last != null){ %>
+      <% } %>
+      <% last = year; %>
+        <div class="archive-year-wrap">
+          <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
+        </div>
+    <% } %>
+   
+      <div class="archive-lists">
+        <div class="clearfix">
+          <a href="<%- url_for(post.path) %>"><%= post.title %></a><span class="right"><%= date(post.date) %></span>
+        </div>
+        <% if (post.tags && post.tags.length){ %>
+  <%- list_tags(post.tags, {
+    show_count: false,
+    class: 'article-tag'
+  }) %>
+<% } %>
+      </div>
+   
+
+  <% }) %>
+   </div>
+  </div>
+  <!-- 存档结束 -->
+<% } else { %>
+  <% if(showCats){ %>
+   <% } %>
+  <% page.posts.each(function(post, i){ %>
+
+      <section class="archives-wrap">
+        <div class="archives">
+
+    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+       </div>
+      </section>
+  <% }) %>
+  <% } %>
+
+<% if (page.total > 1){ %>
+  <nav id="page-nav">
+    <%- paginator({
+      prev_text: "&laquo;",
+      next_text: "&raquo;"
+    }) %>
+  </nav>
+<% } %>

@@ -1,0 +1,11 @@
+<footer id="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="container">
+    <div id="footer-info" class="inner">
+      Copyright&copy; <%= date(new Date(), 'YYYY') %> <%= config.title %> 
+      <%= __('Powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>

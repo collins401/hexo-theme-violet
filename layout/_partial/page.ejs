@@ -1,0 +1,56 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+<% if (page.type == 'categories'){ %>
+    <section class="layout-wrap">
+  <h2 class="layout-title">
+    <%= page.title %>
+  </h2>
+  <div class="layout-wrap-inner list-categories">
+    <% if(site.categories.length) { %>
+      <%- list_categories(site.categories) %>
+    <% } %>
+  </div>
+</section>
+  <% } else if (page.type == 'tags'){ %>
+     <h2 class="layout-title">
+      云标签
+      </h2>
+      <div class="tag-cloud">
+        <div class="tag-cloud-title">
+        </div>
+        <div class="tag-cloud-tags">
+          <%- tagcloud({
+            min_font: 16, 
+    max_font: 16, 
+    amount: 999, 
+          }) %>
+        </div>
+      </div>
+    <% } else{ %>
+  <div class="article-inner">
+      <header class="article-header">
+        <%- partial('post/title', {class_name: 'article-title'}) %>
+      </header>
+
+    <div class="article-entry" itemprop="articleBody">
+     
+        <%- post.content %>
+    </div>
+    <footer class="article-footer">
+      <% if (post.comments && config.disqus_shortname){ %>
+        <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
+      <% } %>
+    </footer>
+  </div>
+     <% }%>
+  <% if (!index){ %>
+    <%- partial('post/nav') %>
+  <% } %>
+</article>
+
+<% if (!index && post.comments && config.disqus_shortname){ %>
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+<% } %>

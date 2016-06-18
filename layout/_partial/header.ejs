@@ -1,0 +1,25 @@
+<header id="header">
+  <div class="container">
+      <div class="top clearfix">
+        <h1 class="logo">
+            <a href="">F</a>
+        </h1>
+        <nav id="main-nav">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <% for (var i in theme.menu){ %>
+            <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+          <% } %>
+        </nav>
+      </div>
+    <!-- <div class="owl-catom">
+        <div class="owl">
+            <div class="eye"><div class="eye-pupil"></div></div>
+            <div class="eye right"><div class="eye-pupil"></div></div>
+          </div>
+    </div>-->
+    <div class="hgroup">
+      <h2><%- config.title %></h2>
+      <p><%- config.subtitle %></p>
+    </div>
+  </div>
+</header>
