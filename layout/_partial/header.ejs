@@ -6,17 +6,19 @@
         </h1>
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"></a>
+          <ul class="menu">
           <% for (var i in theme.menu){ %>
-            <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+            <li><a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
           <% } %>
+          </ul>
         </nav>
       </div>
-    <!-- <div class="owl-catom">
+      <div class="owl-catom">
         <div class="owl">
             <div class="eye"><div class="eye-pupil"></div></div>
             <div class="eye right"><div class="eye-pupil"></div></div>
           </div>
-    </div>-->
+    </div>
     <div class="hgroup">
       <h2><%- config.title %></h2>
       <p><%- config.subtitle %></p>
