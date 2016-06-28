@@ -91,9 +91,30 @@ $logo-text
   margin-top: subtitle-size
 
 #main-nav
-  float: left
-  margin-left: -15px
-
+  float left
+#main-nav input[type=checkbox]
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0;
+  top: -9999px;
+  left: -9999px;
+#main-nav label
+  display none
+  position: relative;
+  height: 30px;
+  width: 50px;
+  margin-top: 25px
+  line-height: 30px;
+  text-align: center;
+  user-select: none;
+  &:before
+    content: '';
+    display: block;
+    height: 2px;
+    width: 20px;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 6px 0 #fff,0 -6px 0 #fff;
 $nav-link
   float: left
   color: #fff
@@ -105,7 +126,6 @@ $nav-link
   padding: 20px 15px
   &:hover
     opacity: 1
-
 .nav-icon
   @extend $nav-link
   font-family: font-icon
@@ -120,14 +140,12 @@ ul.menu
   margin 0
   padding 0
   li
-    float left
     list-style none
-.main-nav-link
-  @extend $nav-link
-  font-weight: 300
-  letter-spacing: 1px
-  @media mq-mobile
-    display: none
+    float left
+    padding: 20px 15px
+    a
+      letter-spacing: 1px
+      color rgba(255,255,255,0.7)
 
 #main-nav-toggle
   display: none
